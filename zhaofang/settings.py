@@ -120,3 +120,6 @@ USE_L10N = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 在settings.py中加入，然后运行python manage.py collectstatic命令进行同步css
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
