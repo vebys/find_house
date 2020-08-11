@@ -5,7 +5,7 @@ from django.db import models
 
 class School(models.Model):
     name = models.CharField(max_length=60, default=None, verbose_name='学校名称', unique=True)
-    period = models.CharField(max_length=40, default=None, verbose_name='学段', unique=True)
+    period = models.CharField(max_length=40, default=None, verbose_name='学段')
     status = models.BooleanField(default=True,null=True,verbose_name='状态')
     area = models.ImageField(upload_to='static/media/', default=None, null=True, blank=True, verbose_name='片区图片')
     remark = models.TextField(max_length=600, default=None, null=True, blank=True, verbose_name='备注')
