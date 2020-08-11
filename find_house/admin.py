@@ -1,8 +1,8 @@
 from django.contrib import admin
 from find_house.models import School, Community, CommunitySchool, House
 
-admin.site.site_title = "选房记录"
-admin.site.site_header = "选房记录"
+admin.site.site_title = "新格林测试"
+admin.site.site_header = "新格林测试"
 # Register your models here.
 
 class SchoolAdmin(admin.ModelAdmin):
