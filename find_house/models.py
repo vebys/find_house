@@ -56,7 +56,7 @@ class House(models.Model):
     actual_area = models.FloatField(default=0, null=True, blank=True, verbose_name='实得面积')
     price = models.FloatField(default=0, null=True, blank=True, verbose_name='总价(万元)')
     single_price = models.FloatField(default=0, null=True, blank=True, verbose_name='单价')
-    intention = models.NullBooleanField(choices=((True, '有'), (None, '备选'), (False, '无')), default=None, verbose_name='是否有意向')
+    intention = models.IntegerField(choices=((1, '非常满意'), (2, '满意'), (3, '一般'), (4, '不满意'), (5, '备选')), default=5, verbose_name='是否有意向')
     house_lift = models.CharField(max_length=20, default=0, null=True, blank=True, verbose_name='梯户比')
     is_lift = models.BooleanField(choices=((True,'有'),(False,'无')),default=True,verbose_name='是否有电梯')
     is_park = models.BooleanField(choices=((True,'有'),(False,'无')),default=True,verbose_name='是否有地下停车场')
