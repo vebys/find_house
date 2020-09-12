@@ -26,7 +26,7 @@ admin.site.register(CommunitySchool, CommunitySchoolAdmin)
 
 
 class HouseAdmin(admin.ModelAdmin):
-    list_display = ('community', 'build','flor','area','price','is_lift','is_park','is_two_year','year','record','unit_type')
+    list_display = ('community', 'build','flor','area','price','intention','house_lift','is_lift','is_park','is_two_year','year','record','unit_type')
 
 
 admin.site.register(House,HouseAdmin)
