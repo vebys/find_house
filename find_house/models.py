@@ -56,7 +56,7 @@ class House(models.Model):
     actual_area = models.FloatField(default=0, null=True, blank=True, verbose_name='实得面积')
     price = models.FloatField(default=0, null=True, blank=True, verbose_name='总价(万元)')
     single_price = models.FloatField(default=0, null=True, blank=True, verbose_name='单价')
-    intention = models.BooleanField(choices=((True, '有'), (False, '无')), default=True, verbose_name='是否有意向')
+    intention = models.NullBooleanField(choices=((True, '有'), (None, '备选'), (False, '无')), default=None, verbose_name='是否有意向')
     house_lift = models.CharField(max_length=20, default=0, null=True, blank=True, verbose_name='梯户比')
     is_lift = models.BooleanField(choices=((True,'有'),(False,'无')),default=True,verbose_name='是否有电梯')
     is_park = models.BooleanField(choices=((True,'有'),(False,'无')),default=True,verbose_name='是否有地下停车场')
@@ -67,6 +67,7 @@ class House(models.Model):
     unit_type = models.ImageField(upload_to='static/media/', default=None, null=True, blank=True, verbose_name='户型图')
     remark = models.TextField(max_length=600, default=None, null=True, blank=True, verbose_name='备注')
     record = models.TextField(max_length=600, default=None, null=True, blank=True, verbose_name='看房记录')
+    time = models.DateTimeField(auto_now_add=True, verbose_name='看房时间')
 
 
     class Meta:
